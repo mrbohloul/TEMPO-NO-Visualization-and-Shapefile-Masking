@@ -8,16 +8,11 @@ This project processes and visualizes tropospheric NO₂ column data from NASA T
 - Filters and interpolates the data onto a uniform grid.
 - Masks the results using a shapefile boundary.
 - Generates a clear, publication-ready NO₂ heatmap using Cartopy.
+  
 ## 📁 Folder Structure
-├── script/
-│ └── visualize_no2.py # Main Python script
-├── data/
-│ ├── shapefiles/ # Put .shp files here
-│ └── sample_NO2_data.nc # Optional: sample NetCDF
-├── results/
-│ └── no2_plot_example.png # Example output
 
-
+📄 Script Overview
+The analyze_no2.py script loads tropospheric NO₂ data from TEMPO NetCDF files, filters and interpolates the data within a defined study area using a shapefile, and visualizes the results on a map. It handles data cleaning, spatial masking, and regridding before producing a high-resolution heatmap of NO₂ concentrations.
 Downloading TEMPO Satellite NetCDF Files
 You can download NetCDF files of TEMPO (satellite data) from NASA's Earthdata Search portal.
 
@@ -29,3 +24,18 @@ Use the search bar to look for datasets related to "TEMPO satellite NetCDF" or o
 Apply filters
 Select the datasets you're interested in.
 Click Download and follow the instructions (you may need to create a free Earthdata login or use the Chrono Download Manager extension if you're using the Chrome browser).
+
+📦 Required Modules Here’s what each package does in the script:
+| **Module**                   | **Alias**  | **Purpose in Script**                                                                 |
+| ---------------------------- | ---------- | ------------------------------------------------------------------------------------- |
+| `xarray`                     | `xr`       | Reads multi-dimensional NetCDF files (e.g., NO₂ and geolocation datasets from TEMPO). |
+| `numpy`                      | `np`       | Performs numerical operations such as array manipulation and filtering.               |
+| `matplotlib.pyplot`          | `plt`      | Creates static visualizations (e.g., NO₂ heatmap, colorbars, titles).                 |
+| `cartopy.crs`                | `ccrs`     | Defines map projections for accurate geospatial plotting.                             |
+| `cartopy.feature`            | `cfeature` | Adds map features like coastlines and borders to plots.                               |
+| `geopandas`                  | `gpd`      | Loads, manipulates, and spatially joins shapefiles (e.g., study region boundaries).   |
+| `glob`                       | –          | Finds all matching `.nc` files in a directory (e.g., loads all TEMPO data files).     |
+| `scipy.interpolate.griddata` | –          | Interpolates scattered NO₂ data onto a regular lat/lon grid for smooth mapping.       |
+| `shapely.geometry.Point`     | –          | Creates point geometries to check which locations fall within the shapefile boundary. |
+| `cartopy.mpl.gridliner`      | –          | Adds latitude and longitude gridlines with labels to the Cartopy map.                 |
+
