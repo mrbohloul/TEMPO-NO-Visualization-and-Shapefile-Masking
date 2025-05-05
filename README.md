@@ -11,8 +11,18 @@ This project processes and visualizes tropospheric NO₂ column data from NASA T
   
 ## 📁 Folder Structure
 
+| **Folder/File**            | **Description**                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| `Script/TEMPO_Spatial.py`    | Main Python script for processing, masking, interpolating, and plotting NO₂ data |
+| `Results/mean_no2_map.png` | 📸 Example output plot showing NO₂ concentrations over the selected region       |
+| `Data/`                    | Folder containing TEMPO NetCDF files NetCDF files (included in release v1.0.0) and shapefiles       |
+| `README.md`                | Project overview, setup instructions, and module descriptions                    |
+
+
+
 📄 Script Overview
-The analyze_no2.py script loads tropospheric NO₂ data from TEMPO NetCDF files, filters and interpolates the data within a defined study area using a shapefile, and visualizes the results on a map. It handles data cleaning, spatial masking, and regridding before producing a high-resolution heatmap of NO₂ concentrations.
+
+The script loads tropospheric NO₂ data from TEMPO NetCDF files, filters and interpolates the data within a defined study area using a shapefile, and visualizes the results on a map. It handles data cleaning, spatial masking, and regridding before producing a high-resolution heatmap of NO₂ concentrations.
 Downloading TEMPO Satellite NetCDF Files
 You can download NetCDF files of TEMPO (satellite data) from NASA's Earthdata Search portal.
 
