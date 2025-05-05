@@ -13,9 +13,9 @@ This project processes and visualizes tropospheric NO₂ column data from NASA T
 
 | **Folder/File**            | **Description**                                                                  |
 | -------------------------- | -------------------------------------------------------------------------------- |
-| `Script/TEMPO_Spatial.py`    | Main Python script for processing, masking, interpolating, and plotting NO₂ data |
-| `Results/mean_no2_map.png` | 📸 Example output plot showing NO₂ concentrations over the selected region       |
-| `Data/`                    | Folder containing TEMPO NetCDF files NetCDF files (included in release v1.0.0) and shapefiles       |
+| `Script`    | Main Python script for processing, masking, interpolating, and plotting NO₂ data |
+| `Results` | 📸 Example output plot showing NO₂ concentrations over the selected region       |
+| `Data`                    | Folder containing TEMPO NetCDF files NetCDF files (included in release v1.0.0) and shapefiles       |
 | `README.md`                | Project overview, setup instructions, and module descriptions                    |
 
 
